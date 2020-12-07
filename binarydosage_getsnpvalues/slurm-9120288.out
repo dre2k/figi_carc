@@ -1,0 +1,14 @@
+---------- Begin SLURM Prolog ----------
+Job ID:        9120288
+Username:      andreeki
+Accountname:   lc_dvc
+Name:          getsnp_pure_eo_allNo
+Partition:     conti
+Nodelist:      hpc3937
+TasksPerNode:  1
+CPUsPerTask:   Default[1]
+TMPDIR:        /tmp/9120288.conti
+SCRATCHDIR:    /staging/scratch/9120288
+Cluster:       uschpc
+HSDA Account:  false
+---------- 2020-12-03 14:56:13 ---------

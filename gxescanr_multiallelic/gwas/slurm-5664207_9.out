@@ -1,0 +1,34 @@
+---------- Begin SLURM Prolog ----------
+Job ID:        5664237
+Username:      andreeki
+Accountname:   lc_dvc
+Name:          tmp.sh
+Partition:     main
+Nodelist:      hpc3790
+TasksPerNode:  1
+CPUsPerTask:   Default[1]
+TMPDIR:        /tmp/5664237.main
+SCRATCHDIR:    /staging/scratch/5664237
+Cluster:       uschpc
+HSDA Account:  false
+---------- 2020-01-13 11:24:39 ---------
+── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+✔ ggplot2 3.2.1     ✔ purrr   0.3.2
+✔ tibble  2.1.3     ✔ dplyr   0.8.3
+✔ tidyr   0.8.3     ✔ stringr 1.3.1
+✔ readr   1.1.1     ✔ forcats 0.3.0
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+
+Attaching package: ‘data.table’
+
+The following objects are masked from ‘package:dplyr’:
+
+    between, first, last
+
+The following object is masked from ‘package:purrr’:
+
+    transpose
+
+[1] 0
