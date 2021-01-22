@@ -3,11 +3,14 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=16GB
 #SBATCH --account=lc_dvc
-#SBATCH --partition=conti
+#SBATCH --partition=dconti_251
 #SBATCH --array=1-5
 
-# submit to slurm or just run script (if small number of SNPs) using bash
+module load gcc/8.3.0
+module load openblas/0.3.8
+module load r/4.0.0
 
+# submit to slurm or just run script (if small number of SNPs) using bash
 
 wrapper () {
                 local exposure=${1}

@@ -1,9 +1,14 @@
 #!/bin/bash
-#SBATCH --time=100:00:00
+#SBATCH --time=23:00:00
 #SBATCH --ntasks=1
 #SBATCH --mem=16GB
-#SBATCH --account=lc_dvc
-#SBATCH --partition=conti
+#SBATCH --account=dconti_251
+
+module load gcc/8.3.0
+module load openblas/0.3.8
+module load r/3.6.3
+module load unzip
+
 
 # submit to slurm or just run script (if small number of SNPs) using bash
 
