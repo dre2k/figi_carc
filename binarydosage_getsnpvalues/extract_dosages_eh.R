@@ -32,7 +32,8 @@ snps_list <- split(snps, tmp4)
 # function to extract dosages by chromosome
 GetSNPValues_wrapper <- function(vector_of_snps) {
   chr <- strsplit(vector_of_snps[1], split = ":")[[1]][1] # get chromosome number
-  bdose <- readRDS(paste0("/auto/pmd-02/figi/HRC_BDose/FIGI_snpid_fix_chr", chr, ".rds"))
+  #bdose <- readRDS(paste0("/auto/pmd-02/figi/HRC_BDose/FIGI_snpid_fix_chr", chr, ".rds"))
+  bdose <- readRDS(paste0("/project/dconti_250/HRC_BDose/FIGI_snpid_fix_chr", chr, ".rds"))
   dosages <- GetSNPValues(bdose, SNPs = vector_of_snps, Subjects = controls, geneProb = F)
   out <- data.frame(dosages)
   out$vcfid <- rownames(out)

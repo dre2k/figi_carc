@@ -9,8 +9,8 @@ module load openblas/0.3.8
 module load r/4.0.0
 
 wdir=/scratch/andreeki/gwis/clump_combined
-exposure=calcium_totqc2
-hrc_version=v3.0
+exposure=aspirin
+hrc_version=v2.4
 #mkdir -p ${out_dir}
 
 # main effects p value clump

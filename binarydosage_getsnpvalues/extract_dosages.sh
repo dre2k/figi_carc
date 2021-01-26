@@ -2,7 +2,7 @@
 #SBATCH --time=23:00:00
 #SBATCH --ntasks=1
 #SBATCH --mem=16GB
-#SBATCH --account=dconti_251
+#SBATCH --account=dconti_250
 
 module load gcc/8.3.0
 module load openblas/0.3.8
@@ -12,7 +12,7 @@ module load unzip
 
 # submit to slurm or just run script (if small number of SNPs) using bash
 
-Rscript extract_dosages.R ${exposure} ${prefix}
+Rscript extract_dosages.R ${filename}
 
 
 
