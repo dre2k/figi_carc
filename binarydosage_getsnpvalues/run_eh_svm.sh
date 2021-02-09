@@ -14,4 +14,7 @@ wrapper () {
 #wrapper calcium_dietqc2
 #wrapper redmeatqc2
 #wrapper procmeatqc2
-wrapper asp_ref
+#wrapper asp_ref
+wrapper fiberqc2
+wrapper fruitqc2
+wrapper vegetableqc2

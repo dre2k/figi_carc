@@ -8,32 +8,32 @@
 
 module load gcc/8.3.0
 module load openblas/0.3.8
-module load r/4.0.0
+module load r/3.6.3
 
 # submit to slurm or just run script (if small number of SNPs) using bash
 
 wrapper () {
                 local exposure=${1}
                 Rscript extract_dosages_hybrid_twostep.R \
-                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_${exposure}.rds \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
                 /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqG_bin${SLURM_ARRAY_TASK_ID}.rds
-#
-#                Rscript extract_dosages_hybrid_twostep.R \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqGE_bin${SLURM_ARRAY_TASK_ID}.rds
-#
-#                Rscript extract_dosages_hybrid_twostep.R \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqEDGE_bin${SLURM_ARRAY_TASK_ID}.rds
-#
-#                Rscript extract_dosages_hybrid_twostep.R \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
-#                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqG_gecco_bin${SLURM_ARRAY_TASK_ID}.rds
+
+                Rscript extract_dosages_hybrid_twostep.R \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqGE_bin${SLURM_ARRAY_TASK_ID}.rds
+
+                Rscript extract_dosages_hybrid_twostep.R \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqEDGE_bin${SLURM_ARRAY_TASK_ID}.rds
+
+                Rscript extract_dosages_hybrid_twostep.R \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
+                /scratch/andreeki/gwis/twostep_expectation_hybrid/${exposure}/${exposure}_snplist_twostep_chiSqG_gecco_bin${SLURM_ARRAY_TASK_ID}.rds
 }
 
 #wrapper 'hrt_ref_pm2'
 #wrapper 'aspirin'
-wrapper 'bmi5'
+#wrapper 'bmi5'
 #wrapper 'alcoholc_heavy_vs_moderate' 
 #wrapper 'alcoholc_moderate' 
 #wrapper 'asp_ref'
@@ -53,6 +53,6 @@ wrapper 'bmi5'
 #wrapper 'procmeatqc2' 
 #wrapper 'redmeatqc2' 
 #wrapper 'smk_aveday' 
-#wrapper 'smk_ever' 
+wrapper 'smk_ever' 
 #wrapper 'smk_pkyr' 
 #wrapper 'vegetableqc2' 
