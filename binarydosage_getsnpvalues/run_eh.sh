@@ -10,4 +10,4 @@ wrapper () {
     sbatch --job-name=gecco_${exposure}     --export=prefix="${wdir}/${exposure}_snplist_twostep_chiSqG_gecco" extract_dosages_eh.sh
 }
 
-wrapper smk_pkyr
+wrapper vitd25

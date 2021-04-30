@@ -4,18 +4,11 @@
 #SBATCH --mem=16GB
 #SBATCH --account=dconti_251
 #SBATCH --partition=conti
-#SBATCH --array=1-8
+#SBATCH --array=1-7
 
 module load gcc/8.3.0
 module load openblas/0.3.8
 module load r/3.6.3
-
-
-
-#Rscript extract_dosages_eh.R \
-#/scratch/andreeki/gwis/figi_controls_1000.rds \
-#/scratch/andreeki/gwis/posthoc/${exposure}/expectation_hybrid/${exposure}_snplist_twostep_${statistic}_bin${SLURM_ARRAY_TASK_ID}.rds
-
 
 Rscript extract_dosages_eh.R \
 /scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \

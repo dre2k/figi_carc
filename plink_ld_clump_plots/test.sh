@@ -3,13 +3,14 @@
 #SBATCH --ntasks=1
 #SBATCH --mem=8GB
 #SBATCH --account=dconti_251
+#SBATCH --partition=conti
 
 module load gcc/8.3.0
 module load openblas/0.3.8
-module load r/4.0.0
+module load r/3.6.3
 
 wdir=/scratch/andreeki/gwis/clump_combined
-exposure=smk_pkyr
+exposure=vitd25
 hrc_version=v2.3
 #mkdir -p ${out_dir}
 

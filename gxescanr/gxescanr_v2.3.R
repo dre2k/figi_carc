@@ -3,12 +3,13 @@ args <- commandArgs(trailingOnly=T)
 chr <- args[1]
 exposure <- args[2]
 
-bdose_directory <- "/auto/pmd-02/figi/HRC_BDose/"
-cov_directory <- "/scratch/andreeki/gwis/results/"
+bdose_directory <- "/project/dconti_250/HRC_BDose/"
+cov_directory <- "/scratch/andreeki/gwis/gxescan/"
+out_directory <- "/scratch/andreeki/gwis/results/"
 
-covariate_file <- paste0(cov_directory,      "input/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan.rds")
-outFile        <- paste0(cov_directory, exposure, "/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan_chr", chr, ".out")
-outFile_skip   <- paste0(cov_directory, exposure, "/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan_skipped_chr", chr, ".out")
+covariate_file <- paste0(cov_directory,           "/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan.rds")
+outFile        <- paste0(out_directory, exposure, "/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan_chr", chr, ".out")
+outFile_skip   <- paste0(out_directory, exposure, "/FIGI_v2.3_gxeset_", exposure, "_basic_covars_gxescan_skipped_chr", chr, ".out")
 
 
 #-----------------------------------------------------------------------------#
