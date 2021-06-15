@@ -5,17 +5,24 @@
 # - Analyses filtered for MAF < 1%
 #=============================================================================#
 library(GxEScanR)
+library(glue)
+
 args <- commandArgs(trailingOnly=T)
 chr <- args[1]
 exposure <- args[2]
+hrc_version <- args[3]
+
+#bd_dir <- "/project/dconti_250/HRC_BDose/"
+#cov_dir <- "/scratch/andreeki/gwis/gxescan/"
+#out_dir <- "/scratch/andreeki/gwis/results/"
 
 bd_dir <- "/project/dconti_250/HRC_BDose/"
-cov_dir <- "/scratch/andreeki/gwis/gxescan/"
-out_dir <- "/scratch/andreeki/gwis/results/"
+cov_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/data/")
+out_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/results/")
 
-covariate_file <- paste0(cov_dir,                "FIGI_v3.0_gxeset_", exposure, "_basic_covars_gxescan.rds")
-outFile        <- paste0(out_dir, exposure, "/", "FIGI_v3.0_gxeset_", exposure, "_basic_covars_gxescan_chr", chr, ".out")
-outFile_skip   <- paste0(out_dir, exposure, "/", "FIGI_v3.0_gxeset_", exposure, "_basic_covars_gxescan_skipped_chr", chr, ".out")
+covariate_file <- glue("{cov_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan.rds")
+outFile        <- glue("{out_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan_chr{chr}.out")
+outFile_skip   <- glue("{out_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan_skipped_chr{chr}.out")
 
 
 #-----------------------------------------------------------------------------#

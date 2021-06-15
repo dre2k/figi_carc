@@ -13,4 +13,4 @@ module load openblas/0.3.8
 module load r/3.6.3
 
 #Rscript gxescanr_v3.0.R ${SLURM_ARRAY_TASK_ID} /scratch/andreeki/gwis/results/input/FIGI_v3.0_gxeset_${exposure}_basic_covars_gxescan
-Rscript gxescanr_v3.0.R ${SLURM_ARRAY_TASK_ID} ${exposure}
+Rscript gxescanr_v3.0.R ${SLURM_ARRAY_TASK_ID} ${exposure} ${hrc_version}

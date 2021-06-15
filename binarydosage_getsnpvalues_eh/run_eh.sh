@@ -11,4 +11,4 @@ wrapper () {
     sbatch --job-name=gecco_${exposure}     --export=prefix="${wdir}/expectation_based_snplist_${exposure}_${hrc_version}_chiSqG_gecco" extract_dosages_eh.sh
 }
 
-wrapper bmi5 v2.3
+wrapper redmeatqcm_v2 v3.0
