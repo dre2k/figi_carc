@@ -10,11 +10,14 @@ module load gcc/8.3.0
 module load openblas/0.3.8
 module load r/3.6.3
 
+#Rscript extract_dosages_eh.R \
+#/scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
+#${prefix}_bin${SLURM_ARRAY_TASK_ID}.rds
+
+
 Rscript extract_dosages_eh.R \
-/scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
+/project/dconti_250/gwis_test/data/figi_controls_1000.rds \
 ${prefix}_bin${SLURM_ARRAY_TASK_ID}.rds
-
-
 
 
 #=============================================================================#

@@ -11,11 +11,7 @@ module load openblas/0.3.8
 module load r/3.6.3
 
 idir="/project/dconti_250/HRC_VCF_SampleRename"
-odir="/scratch/andreeki/PCA_check"
-#batch="axiom_acs_aus_nf"
+odir="/scratch/andreeki/PCA"
 
-#mkdir -p ./${batch}
-
-#plink --vcf ${idir}/${batch}_chr${SLURM_ARRAY_TASK_ID}.vcf.gz --double-id --snps-only --biallelic-only --keep-allele-order --keep figi_vcfid_sample_2500.txt --make-bed --out ${odir}/${batch}/${batch}_chr${SLURM_ARRAY_TASK_ID}_step01
-plink2 --vcf ${idir}/${batch}_chr${SLURM_ARRAY_TASK_ID}.vcf.gz --memory 8000 --double-id --snps-only --min-alleles 2 --max-alleles 2 --keep figi_vcfid_sample_2500.txt --rm-dup exclude-all --make-pgen --out ${odir}/${batch}/${batch}_chr${SLURM_ARRAY_TASK_ID}_step01
+plink2 --vcf ${idir}/${batch}_chr${SLURM_ARRAY_TASK_ID}.vcf.gz --memory 8000 --double-id --snps-only --min-alleles 2 --max-alleles 2 --keep ${odir}/figi_vcfid_sample_2500.txt --rm-dup exclude-all --make-pgen --out ${odir}/${batch}/${batch}_chr${SLURM_ARRAY_TASK_ID}_step01
 

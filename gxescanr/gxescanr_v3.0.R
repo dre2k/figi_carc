@@ -17,8 +17,11 @@ hrc_version <- args[3]
 #out_dir <- "/scratch/andreeki/gwis/results/"
 
 bd_dir <- "/project/dconti_250/HRC_BDose/"
-cov_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/data/")
-out_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/results/")
+#cov_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/data/")
+#out_dir <- glue("/scratch2/andreeki/gwis_test/{exposure}/results/")
+
+cov_dir <- glue("/project/dconti_250/gwis_test/{exposure}/data/")
+out_dir <- glue("/project/dconti_250/gwis_test/{exposure}/results/")
 
 covariate_file <- glue("{cov_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan.rds")
 outFile        <- glue("{out_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan_chr{chr}.out")
