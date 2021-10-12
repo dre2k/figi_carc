@@ -12,4 +12,4 @@ module load gcc/8.3.0
 module load openblas/0.3.8
 module load r/3.6.3
 
-Rscript gxescanr_v2.3.R ${SLURM_ARRAY_TASK_ID} ${exposure}
+Rscript gxescanr_v2.3.R ${SLURM_ARRAY_TASK_ID} ${exposure} ${hrc_version}
