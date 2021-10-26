@@ -1,67 +1,19 @@
 #!/bin/bash
 
-#sbatch --job-name=gxescanr_asp_ref --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_asp_ref_basic_covars_gxescan.log --export=exposure=asp_ref gxescanr.sh 
+#sbatch --job-name=folate_tot_v3  --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_folate_totqc2_basic_covars_gxescan_chr%a.log --export=exposure=folate_totqc2 gxescanr_v3.0.sh
+#sbatch --job-name=calcium_tot_v3 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_calcium_totqc2_basic_covars_gxescan_chr%a.log --export=exposure=calcium_totqc2 gxescanr_v3.0.sh
+#sbatch --job-name=calcium_diet_v3 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_calcium_dietqc2_basic_covars_gxescan_chr%a.log --export=exposure=calcium_dietqc2 gxescanr_v3.0.sh
+#sbatch --job-name=folate_diet_v3 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_folate_dietqc2_basic_covars_gxescan_chr%a.log --export=exposure=folate_dietqc2 gxescanr_v3.0.sh
+#sbatch --job-name=aspirin_v3 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_aspirin_basic_covars_gxescan_chr%a.log --export=exposure=aspirin gxescanr_v3.0.sh
+#sbatch --job-name=redmeatqcm_v2 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_redmeatqcm_v2_basic_covars_gxescan_chr%a.log --export=exposure=redmeatqcm_v2,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=procmeatqcm_v2 --output=/scratch/andreeki/gwis/results/logs/FIGI_v3.0_gxeset_procmeatqcm_v2_basic_covars_gxescan_chr%a.log --export=exposure=procmeatqcm_v2,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=fruit5qcm --output=logs/FIGI_v3.0_gxeset_fruit5qcm_basic_covars_gxescan_chr%a.log --export=exposure=fruit5qcm,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=vegetable5qcm --output=logs/FIGI_v3.0_gxeset_vegetable5qcm_basic_covars_gxescan_chr%a.log --export=exposure=vegetable5qcm,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=fiber10qcm --output=logs/FIGI_v3.0_gxeset_fiber10qcm_basic_covars_gxescan_chr%a.log --export=exposure=fiber10qcm,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=folate_diet400qcm --output=logs/FIGI_v3.0_gxeset_folate_diet400qcm_basic_covars_gxescan_chr%a.log --export=exposure=folate_diet400qcm,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=folate_sup --output=logs/FIGI_v3.0_gxeset_folate_sup_basic_covars_gxescan_chr%a.log --export=exposure=folate_sup,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=folate_sup_yn --output=logs/FIGI_v3.0_gxeset_folate_sup_yn_basic_covars_gxescan_chr%a.log --export=exposure=folate_sup_yn,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=folate_tot --output=logs/FIGI_v3.0_gxeset_folate_tot_basic_covars_gxescan_chr%a.log --export=exposure=folate_tot,hrc_version=v3.0 gxescanr_v3.0.sh
+#sbatch --job-name=bmi_f --output=logs/FIGI_v2.3_gxeset_bmi5_female_basic_covars_gxescan_chr%a.log --export=exposure=bmi5_female,hrc_version=v2.3 gxescanr.sh
+sbatch --job-name=bmi_m --output=logs/FIGI_v2.3_gxeset_bmi5_male_basic_covars_gxescan_chr%a.log --export=exposure=bmi5_male,hrc_version=v2.3 gxescanr.sh
 
-
-#sbatch --job-name=gxe_hrt_ref_pm --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_hrt_ref_pm_basic_covars_gxescan.log --export=exposure=hrt_ref_pm gxescanr.sh
-
-#sbatch --job-name=gxe_asp_ref --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_asp_ref_basic_covars_gxescan.log --export=exposure=asp_ref gxescanr.sh
-
-#sbatch --job-name=gxe_aspirin --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_aspirin_basic_covars_gxescan.log --export=exposure=aspirin gxescanr.sh
-#sbatch --job-name=gxe_nsaids --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_nsaids_basic_covars_gxescan.log --export=exposure=nsaids gxescanr.sh
-
-#sbatch --job-name=gwas --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gwasset_basic_covars_gxescan.log --export=exposure=gwas gxescanr_gwas.sh
-
-#sbatch --job-name=gxe_hrt_ref_pm2 --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_hrt_ref_pm2_basic_covars_gxescan.log --export=exposure=hrt_ref_pm2 gxescanr.sh
-
-#sbatch --job-name=gxe_eo_ref_pm_gxe --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_eo_ref_pm_gxe_basic_covars_gxescan.log --export=exposure=eo_ref_pm_gxe gxescanr.sh
-
-#sbatch --job-name=gxe_ep_ref_pm_gxe --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_ep_ref_pm_gxe_basic_covars_gxescan.log --export=exposure=ep_ref_pm_gxe gxescanr.sh
-
-
-
-# Alcohol
-#sbatch --job-name=gxe_alcohol_mod --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_alcoholc_moderate_basic_covars_gxescan.log --export=exposure=alcoholc_moderate gxescanr.sh
-#sbatch --job-name=gxe_alcohol_heavy --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_alcoholc_heavy_basic_covars_gxescan.log --export=exposure=alcoholc_heavy gxescanr.sh
-#sbatch --job-name=gxe_alcohol_heavy_vs_moderate --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_alcoholc_heavy_vs_moderate_basic_covars_gxescan.log --export=exposure=alcoholc_heavy_vs_moderate gxescanr.sh
-
-# BMI
-#sbatch --job-name=gxe_bmi5 --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_bmi5_basic_covars_gxescan.log --export=exposure=bmi5 gxescanr.sh
-
-# height10
-#sbatch --job-name=gxe_height10 --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_height10_basic_covars_gxescan.log --export=exposure=height10 gxescanr.sh
-#sbatch --job-name=gxe_height10_cohort --output=/scratch/andreeki/gwis/results/logs/FIGI_v2.3_gxeset_height10_basic_covars_gxescan_cohort_chr%a.log --export=exposure=height10 gxescanr.sh
-#sbatch --job-name=gxe_height10_cc --output=/scratch/andreeki/gwis/results/logs/FIGI_v2.3_gxeset_height10_basic_covars_gxescan_casecontrol_chr%a.log --export=exposure=height10 gxescanr.sh
-
-sbatch --job-name=height10_cc --output=/scratch/andreeki/gwis/results/logs/FIGI_v2.3_gxeset_height10_casecontrol_basic_covars_gxescan_chr%a.log --export=exposure=height10_casecontrol gxescanr.sh
-
-
-# T2D
-#sbatch --job-name=gxe_diab --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_diab_basic_covars_gxescan.log --export=exposure=diab gxescanr.sh
-
-# Meat Intake
-#sbatch --job-name=gxe_redmeatqc2 --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_redmeatqc2_basic_covars_gxescan.log --export=exposure=redmeatqc2 gxescanr.sh
-#sbatch --job-name=gxe_procmeatqc2 --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_procmeatqc2_basic_covars_gxescan.log --export=exposure=procmeatqc2 gxescanr.sh
-
-# Folate
-#sbatch --job-name=gxe_foltot --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_folate_totqc2_basic_covars_gxescan.log --export=exposure=folate_totqc2 gxescanr.sh
-#sbatch --job-name=gxe_foldiet --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_folate_dietqc2_basic_covars_gxescan.log --export=exposure=folate_dietqc2 gxescanr.sh
-
-# Calcium 
-#sbatch --job-name=gxe_catot  --output=/scratch/andreeki/gwis/results/logs/FIGI_v2.3_gxeset_calcium_totqc2_basic_covars_gxescan_chr%a.log --export=exposure=calcium_totqc2 gxescanr.sh
-#sbatch --job-name=gxe_cadiet --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_calcium_dietqc2_basic_covars_gxescan.log --export=exposure=calcium_dietqc2 gxescanr.sh
-
-# vitd25 (without batch variable...)
-#sbatch --job-name=gxe_vitd25 --output=/scratch/andreeki/gwis/results/logs/FIGI_v2.3_gxeset_vitd25_basic_covars_gxescan.log --export=exposure=vitd25 gxescanr.sh
-
-
-# Smoking
-#sbatch --job-name=gxe_smk_ever  --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_smk_ever_basic_covars_gxescan.log --export=exposure=smk_ever gxescanr.sh
-#sbatch --job-name=gxe_smk_aveday --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_smk_aveday_basic_covars_gxescan.log --export=exposure=smk_aveday gxescanr.sh
-#sbatch --job-name=gxe_smk_pkyr  --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_smk_pkyr_basic_covars_gxescan.log --export=exposure=smk_pkyr gxescanr.sh
-
-
-# fruit vegetable fiber
-#sbatch --job-name=gxe_fiber  --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_fiberqc2_basic_covars_gxescan.log --export=exposure=fiberqc2 gxescanr.sh
-#sbatch --job-name=gxe_vegetable --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_vegetableqc2_basic_covars_gxescan.log --export=exposure=vegetableqc2 gxescanr.sh
-#sbatch --job-name=gxe_fruit  --output=/staging/dvc/andreeki/gxescanr/logs/FIGI_v2.3_gxeset_fruitqc2_basic_covars_gxescan.log --export=exposure=fruitqc2 gxescanr.sh

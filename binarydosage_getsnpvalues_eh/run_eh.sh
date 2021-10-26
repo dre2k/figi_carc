@@ -29,4 +29,7 @@ wrapper () {
 #wrapper folate_dietqc2 v2.3
 #wrapper folate_diet400qcm v3.0
 #wrapper folate_sup_yn v3.0
-wrapper folate_tot v3.0
+#wrapper folate_tot v3.0
+#wrapper bmi5_female v2.3
+#wrapper bmi5_male v2.3
+wrapper alcoholc_heavy_vs_moderate v2.3

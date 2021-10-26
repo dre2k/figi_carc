@@ -2,24 +2,29 @@
 # GxEScanR
 # 
 # ------ Notes: ------ #
-# - MAF < 1%
+# - Analyses filtered for MAF < 1%
 #=============================================================================#
 library(GxEScanR)
+library(glue)
+
 args <- commandArgs(trailingOnly=T)
 chr <- args[1]
-cov <- args[2]
+exposure <- args[2]
+hrc_version <- args[3]
 
-bdose_directory <- "/auto/pmd-02/figi/HRC_BDose"
-covariate_file <- paste0(cov, ".rds")
-bdose_file <- paste0("FIGI_snpid_fix_chr", chr, ".rds") 
+bd_dir <- "/project/dconti_250/HRC_BDose/"
+cov_dir <- glue("/project/dconti_250/gwis_test/{exposure}/data/")
+out_dir <- glue("/project/dconti_250/gwis_test/{exposure}/results/")
 
-outFile <-      paste0(cov, "_chr", chr, ".out")
-outFile_skip <- paste0(cov, "_skipped_chr", chr, ".out")
+covariate_file <- glue("{cov_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan.rds")
+outFile        <- glue("{out_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan_chr{chr}.out")
+outFile_skip   <- glue("{out_dir}/FIGI_{hrc_version}_gxeset_{exposure}_basic_covars_gxescan_skipped_chr{chr}.out")
 
 
 #-----------------------------------------------------------------------------#
 # set directory
-setwd(bdose_directory)
+setwd(bd_dir)
+bdose_file <- paste0("FIGI_snpid_fix_chr", chr, ".rds")
 
 # Read in the covariate info
 figiCov <- readRDS(covariate_file)
@@ -30,7 +35,5 @@ class(figiGene) <- "genetic-file-info" # (temporary, john will fix)
 
 # Fit the models
 Sys.time()
-#GxEScan(figiCov, figiGene, outFile=outFile, skipFile=outFile_skip, popminMaf=0.01, sampleminMaf=0.01, binCov=F, snps = 2678934:numSNPs)
-#GxEScan(figiCov, figiGene, outFile=outFile, skipFile=outFile_skip, popminMaf=0.01, sampleminMaf=0.01, binCov=F)
 GxEScan(figiCov, figiGene, outFile=outFile, skipFile=outFile_skip, popminMaf=0, sampleminMaf=0.01, binCov=F)
 Sys.time()
