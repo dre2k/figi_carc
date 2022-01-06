@@ -32,4 +32,7 @@ wrapper () {
 #wrapper folate_tot v3.0
 #wrapper bmi5_female v2.3
 #wrapper bmi5_male v2.3
-wrapper alcoholc_heavy_vs_moderate v2.3
+#wrapper alcoholc_heavy_vs_moderate v2.3
+#wrapper methrswklnsqc2 v3.1
+#wrapper methrswklns v3.1
+wrapper active_met_875 v3.1

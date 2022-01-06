@@ -6,7 +6,7 @@
 #SBATCH --partition=conti
 #SBATCH --mail-user=andreeki@usc.edu
 #SBATCH --mail-type=END
-#SBATCH --array=1-22
+#SBATCH --array=1-12
 
 module load gcc/8.3.0
 module load openblas/0.3.8

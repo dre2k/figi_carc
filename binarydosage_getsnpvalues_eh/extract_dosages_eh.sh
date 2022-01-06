@@ -14,11 +14,13 @@ module load r/3.6.3
 #/scratch/andreeki/gwis/twostep_expectation_hybrid/figi_controls_1000.rds \
 #${prefix}_bin${SLURM_ARRAY_TASK_ID}.rds
 
+#Rscript extract_dosages_eh.R \
+#/project/dconti_250/gwis_test/data/figi_controls_1000.rds \
+#${prefix}_bin${SLURM_ARRAY_TASK_ID}.rds
 
 Rscript extract_dosages_eh.R \
 /project/dconti_250/gwis_test/data/figi_controls_1000.rds \
-${prefix}_bin${SLURM_ARRAY_TASK_ID}.rds
-
+${prefix}_bin${SLURM_ARRAY_TASK_ID}_total_m_snps.rds
 
 #=============================================================================#
 # OLD STUFF #
